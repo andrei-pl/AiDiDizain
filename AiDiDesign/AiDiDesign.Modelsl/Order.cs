@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Order : BaseEntity
+    public class Order : BaseEntry
     {
         private ICollection<Furniture> furnitures;
 
@@ -26,7 +26,7 @@
         [Required]
         public DateTime Date { get; set; }
 
-        ICollection<Furniture> Furnitures
+        public virtual ICollection<Furniture> Furnitures
         {
             get { return this.furnitures; }
             set

@@ -2,9 +2,9 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class BaseEntity
+    public abstract class BaseEntry
     {
         [Key]
-        public int Id;
+        public int Id { get; set; }
     }
 }

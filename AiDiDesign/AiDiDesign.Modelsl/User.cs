@@ -2,10 +2,6 @@
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
-
-    using System.Data.Entity;
-    using System.Security.Claims;
-    using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.Collections.Generic;
@@ -18,6 +14,7 @@
         {
             this.orders = new HashSet<Order>();
         }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -26,7 +23,7 @@
             return userIdentity;
         }
 
-        public ICollection<Order> Orders
+        public virtual ICollection<Order> Orders
         {
             get { return this.orders; }
             set

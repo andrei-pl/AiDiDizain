@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class Picture : BaseEntity
+    public class Picture : BaseEntry
     {
         [Required]
         public string ResourcePath { get; set; }
