@@ -15,7 +15,7 @@ namespace AiDiDesign.Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Our company is the best and always will be.";
 
             return View();
         }

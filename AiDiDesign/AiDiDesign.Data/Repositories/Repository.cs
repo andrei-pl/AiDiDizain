@@ -20,7 +20,7 @@
         public Repository(AiDiDesignDBContext context)
         {
             this.context = context;
-            //this.set = context.Set<T>();
+            this.set = context.Set<T>();
         }
 
         public IQueryable<T> All()
