@@ -1,8 +1,11 @@
-﻿@{
+﻿@model object
+
+@{
     ViewBag.Title = "About";
 }
 
+@Html.AntiForgeryToken(); @*ValidateAntiForgeryToken in the controller*@
 <div class="jumbotron">
-    <h3>@ViewBag.Message</h3>
+    <h3>@Model</h3>
 </div>
 

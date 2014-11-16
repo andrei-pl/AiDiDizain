@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AiDiDesign.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
@@ -15,16 +15,16 @@ namespace AiDiDesign.Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Our company is the best and always will be.";
+            object text = "Our company is the best and always will be.";
 
-            return View();
+            return View(text);
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+             object text = "Your contact page.";
 
-            return View();
+            return View(text);
         }
     }
 }

@@ -10,11 +10,11 @@
         private AiDiDesignDBContext context;
         private IDictionary<Type, object> repositories;
 
-        public AiDiDesignData()
-            : this(new AiDiDesignDBContext())
-        {
+        //public AiDiDesignData()
+        //    : this(new AiDiDesignDBContext())
+        //{
 
-        }
+        //}
 
         public AiDiDesignData(AiDiDesignDBContext context)
         {
