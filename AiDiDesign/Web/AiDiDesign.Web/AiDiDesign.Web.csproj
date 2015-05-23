@@ -262,6 +262,14 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\AiDiDesign.Common\AiDiDesign.Common.csproj">
+      <Project>{357e2038-ca40-4758-a3b8-6d92a0d2118d}</Project>
+      <Name>AiDiDesign.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\AiDiDesign.Data.Common\AiDiDesign.Data.Common.csproj">
+      <Project>{bc28a77a-d70c-4bb1-83fa-20a31d38c9b3}</Project>
+      <Name>AiDiDesign.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\AiDiDesign.Data.Models\AiDiDesign.Data.Models.csproj">
       <Project>{36a96c61-0e60-4f03-94ba-757688929f05}</Project>
       <Name>AiDiDesign.Data.Models</Name>

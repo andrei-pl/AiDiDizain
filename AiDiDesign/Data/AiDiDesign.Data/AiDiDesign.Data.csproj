@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AiDiDesignDbContext.cs" />
+    <Compile Include="IAiDiDesignDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +62,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AiDiDesign.Data.Common\AiDiDesign.Data.Common.csproj">
+      <Project>{bc28a77a-d70c-4bb1-83fa-20a31d38c9b3}</Project>
+      <Name>AiDiDesign.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AiDiDesign.Data.Models\AiDiDesign.Data.Models.csproj">
       <Project>{36a96c61-0e60-4f03-94ba-757688929f05}</Project>
       <Name>AiDiDesign.Data.Models</Name>
