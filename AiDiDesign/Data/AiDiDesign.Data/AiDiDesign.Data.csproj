@@ -58,12 +58,17 @@
     <Compile Include="IAiDiDesignDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seeders\StaticDataSeeder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\AiDiDesign.Common\AiDiDesign.Common.csproj">
+      <Project>{357e2038-ca40-4758-a3b8-6d92a0d2118d}</Project>
+      <Name>AiDiDesign.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AiDiDesign.Data.Common\AiDiDesign.Data.Common.csproj">
       <Project>{bc28a77a-d70c-4bb1-83fa-20a31d38c9b3}</Project>
       <Name>AiDiDesign.Data.Common</Name>

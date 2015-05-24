@@ -5,6 +5,8 @@ namespace AiDiDesign.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    using AiDiDesign.Data.Seeders;
+    
     public sealed class Configuration : DbMigrationsConfiguration<AiDiDesignDbContext>
     {
         public Configuration()
@@ -28,6 +30,12 @@ namespace AiDiDesign.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            if (!context.Users.Any())
+            {
+                StaticDataSeeder.SeedRoles(context);
+                StaticDataSeeder.SeedAdmin(context);
+                StaticDataSeeder.SeedUsers(context);
+            }
         }
     }
 }
