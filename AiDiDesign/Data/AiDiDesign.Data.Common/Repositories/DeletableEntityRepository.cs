@@ -1,4 +1,4 @@
-﻿namespace AiDiDesign.Data.Repositories
+﻿namespace AiDiDesign.Data.Common.Repositories
 {
     using System;
     using System.Data.Entity;
@@ -6,7 +6,7 @@
 
     using AiDiDesign.Data.Common.Models;
 
-    class DeletableEntityRepository<T> : GenericRepository<T>, IDeletableEntityRepository<T>
+    public class DeletableEntityRepository<T> : GenericRepository<T>, IDeletableEntityRepository<T>
           where T : class, IDeletableEntity
     {
         public DeletableEntityRepository(DbContext context)

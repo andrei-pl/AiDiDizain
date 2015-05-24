@@ -1,11 +1,11 @@
-﻿namespace AiDiDesign.Data.Repositories
+﻿namespace AiDiDesign.Data.Common.Repositories
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
 
-    class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : IRepository<T> where T : class
     {
         private DbContext context;
 

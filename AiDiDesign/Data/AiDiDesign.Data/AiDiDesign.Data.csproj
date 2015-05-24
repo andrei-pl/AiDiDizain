@@ -52,14 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AiDiDesignData.cs" />
     <Compile Include="AiDiDesignDbContext.cs" />
+    <Compile Include="IAiDiDesignData.cs" />
     <Compile Include="IAiDiDesignDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DeletableEntityRepository.cs" />
-    <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\IDeletableEntityRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

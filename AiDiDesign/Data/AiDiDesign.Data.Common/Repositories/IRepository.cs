@@ -1,4 +1,4 @@
-﻿namespace AiDiDesign.Data.Repositories
+﻿namespace AiDiDesign.Data.Common.Repositories
 {
     using System;
     using System.Linq;
