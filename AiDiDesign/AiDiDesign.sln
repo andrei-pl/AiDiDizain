@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiDiDesign.Data", "Data\AiD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiDiDesign.Data.Models", "Data\AiDiDesign.Data.Models\AiDiDesign.Data.Models.csproj", "{36A96C61-0E60-4F03-94BA-757688929F05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiDiDesign.Web.Infrastructure", "AiDiDesign.Web.Infrastructure\AiDiDesign.Web.Infrastructure.csproj", "{C11BCA6C-B79B-4229-9286-A01D7D7F2D72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{36A96C61-0E60-4F03-94BA-757688929F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36A96C61-0E60-4F03-94BA-757688929F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36A96C61-0E60-4F03-94BA-757688929F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11BCA6C-B79B-4229-9286-A01D7D7F2D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11BCA6C-B79B-4229-9286-A01D7D7F2D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11BCA6C-B79B-4229-9286-A01D7D7F2D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11BCA6C-B79B-4229-9286-A01D7D7F2D72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{357E2038-CA40-4758-A3B8-6D92A0D2118D} = {0F3F65F8-A2CC-4A16-A2D2-D1D1DCE16CE5}
 		{0010DF4F-9DA5-415B-8EF9-F2B34415F54A} = {B7DC5BAE-8C96-4394-A338-7584B2226A6D}
 		{36A96C61-0E60-4F03-94BA-757688929F05} = {B7DC5BAE-8C96-4394-A338-7584B2226A6D}
+		{C11BCA6C-B79B-4229-9286-A01D7D7F2D72} = {4252D831-F77B-4476-92BB-20052E4E4CE1}
 	EndGlobalSection
 EndGlobal
