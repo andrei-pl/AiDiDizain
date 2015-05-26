@@ -11,12 +11,14 @@
     {
         private ICollection<Picture> picturesSource;
         private ICollection<FurnitureType> furnitureTypes;
+        private ICollection<Order> orders;
 
         public Furniture()
         {
             this.Id = new Guid();
             this.picturesSource = new HashSet<Picture>();
             this.furnitureTypes = new HashSet<FurnitureType>();
+            this.orders = new HashSet<Order>();
         }
 
         public Guid Id { get; set; }
@@ -25,6 +27,17 @@
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        {
+            get
+            {
+                return this.orders;
+            }
+            set
+            {
+                this.orders = value;
+            }
+        }
 
         [Required]
         public virtual ICollection<FurnitureType> FurnitureTypes 

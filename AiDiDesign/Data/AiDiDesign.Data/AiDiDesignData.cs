@@ -36,8 +36,7 @@
         {
             get
             {
-                // TODO: Implement this property getter
-                throw new NotImplementedException();
+                return this.GetRepository<Basket>();
             }
         }
 
@@ -45,17 +44,22 @@
         {
             get
             {
-                // TODO: Implement this property getter
-                throw new NotImplementedException();
+                return this.GetRepository<Furniture>();
             }
         }
 
-        public IDeletableEntityRepository<FurnitureType> FurnitureTypes
+        public IRepository<FurnitureType> FurnitureTypes
         {
             get
             {
-                // TODO: Implement this property getter
-                throw new NotImplementedException();
+                var typeOfModel = typeof(FurnitureType);
+
+                if (!this.repositories.ContainsKey(typeOfModel))
+                {
+                    this.repositories.Add(typeOfModel, Activator.CreateInstance(typeof(GenericRepository<FurnitureType>), this.context));
+                }
+
+                return (IRepository<FurnitureType>)this.repositories[typeOfModel];
             }
         }
 
@@ -63,8 +67,7 @@
         {
             get
             {
-                // TODO: Implement this property getter
-                throw new NotImplementedException();
+                return this.GetRepository<Order>();
             }
         }
 
@@ -72,8 +75,7 @@
         {
             get
             {
-                // TODO: Implement this property getter
-                throw new NotImplementedException();
+                return this.GetRepository<Picture>();
             }
         }
 

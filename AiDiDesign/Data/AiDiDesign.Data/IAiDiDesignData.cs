@@ -13,7 +13,7 @@
 
         IDeletableEntityRepository<Furniture> Furnitures { get; }
 
-        IDeletableEntityRepository<FurnitureType> FurnitureTypes { get; }
+        IRepository<FurnitureType> FurnitureTypes { get; }
 
         IDeletableEntityRepository<Order> Orders { get; }
 
