@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basket.cs" />
+    <Compile Include="FirstPageText.cs" />
     <Compile Include="Furniture.cs" />
     <Compile Include="FurnitureType.cs" />
     <Compile Include="Order.cs" />

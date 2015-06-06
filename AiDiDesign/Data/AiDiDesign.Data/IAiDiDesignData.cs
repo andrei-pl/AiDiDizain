@@ -19,6 +19,8 @@
 
         IDeletableEntityRepository<Picture> Pictures { get; }
 
+        IDeletableEntityRepository<FirstPageText> FirstPageTexts { get; }
+
         DbContext Context { get; }
 
         void SaveChanges();

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using AiDiDesign.Web.Models;
+using AiDiDesign.Web.ViewModels;
 
 namespace AiDiDesign.Web.Controllers
 {

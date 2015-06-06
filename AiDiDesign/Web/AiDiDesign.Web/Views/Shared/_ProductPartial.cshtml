@@ -1,0 +1,16 @@
+﻿@model AiDiDesign.Web.ViewModels.ProductHomeViewModel
+
+<div class="col-lg-4">
+    <div class="thumbnail">
+        <h4 class="modal-header">@Model.Name</h4>
+        <img src="@Url.Action("GetImage", "Home", new { id = Model.Id })" alt="@Model.Name" class="img-responsive img-thumbnail" style="width:70%; height:70%" />
+        <div class="caption">
+            <p>
+                <a href="@Url.Action("Details", "Products", new { Model.Id })" class="btn btn-default" role="button">View</a>
+                <button class="btn btn-default" type="button">
+                    Price: <span class="badge">$@Model.Price</span>
+                </button>
+            </p>
+        </div>
+    </div>
+</div>

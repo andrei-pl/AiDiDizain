@@ -36,6 +36,11 @@ namespace AiDiDesign.Data.Migrations
                 StaticDataSeeder.SeedAdmin(context);
                 StaticDataSeeder.SeedUsers(context);
             }
+
+            if(!context.Furnitures.Any())
+            {
+                StaticDataSeeder.SeedProducts(context);
+            }
         }
     }
 }

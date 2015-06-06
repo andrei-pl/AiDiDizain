@@ -15,7 +15,7 @@
 
         public Furniture()
         {
-            this.Id = new Guid();
+            this.Id = Guid.NewGuid();
             this.picturesSource = new HashSet<Picture>();
             this.furnitureTypes = new HashSet<FurnitureType>();
             this.orders = new HashSet<Order>();
@@ -59,7 +59,7 @@
             }
         }
         
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         public int Quantity { get; set; }
 

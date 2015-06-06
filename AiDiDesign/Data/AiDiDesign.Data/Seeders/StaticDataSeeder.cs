@@ -4,10 +4,12 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Linq;
-    
+
     using AiDiDesign.Common;
     using AiDiDesign.Data.Models;
-    
+    using System.Collections.Generic;
+    using System.Drawing;
+
     internal static class StaticDataSeeder
     {
         private static readonly Random random = new Random();
@@ -162,6 +164,181 @@
             };
 
             return images[random.Next(0, images.Length)];
+        }
+
+        internal static void SeedProducts(AiDiDesignDbContext context)
+        {
+            IList<FurnitureType> categories = new List<FurnitureType>()
+            {
+                new FurnitureType() { Name = "Хол" },
+                new FurnitureType() { Name = "Кухня" },
+                new FurnitureType() { Name = "Арт" },
+                new FurnitureType() { Name = "Детско" },
+                new FurnitureType() { Name = "Дивани" },
+                new FurnitureType() { Name = "Столове" },
+                new FurnitureType() { Name = "Легла" }
+            };
+
+            var image = new Bitmap(Extensions.GetImageFromUrl(@"http://st.houzz.com/simgs/8af1647b0fd8d1e9_4-3533/contemporary-upholstery-fabric.jpg"));
+            string url = @"http://st.houzz.com/simgs/8af1647b0fd8d1e9_4-3533/contemporary-upholstery-fabric.jpg";
+            Picture picture1 = new Picture()
+            {
+                IsHidden = false,
+                IsDeleted = false,
+                PictureUrl = url,
+            };
+
+            Picture picture2 = new Picture()
+            {
+                IsHidden = false,
+                IsDeleted = false,
+                PictureUrl = url,
+            };
+
+            Picture picture3 = new Picture()
+            {
+                IsHidden = false,
+                IsDeleted = false,
+                PictureUrl = url,
+            };
+
+            Picture picture4 = new Picture()
+            {
+                IsHidden = false,
+                IsDeleted = false,
+                PictureUrl = url,
+            };
+
+            Picture picture5 = new Picture()
+            {
+                IsHidden = false,
+                IsDeleted = false,
+                PictureUrl = url,
+            };
+
+            Picture picture6 = new Picture()
+            {
+                IsHidden = false,
+                IsDeleted = false,
+                PictureUrl = url,
+            };
+
+            List<Furniture> products = new List<Furniture>();
+            context.Furnitures.Add(new Furniture()
+            {
+                Name = "Теди",
+                Price = 11.00m,
+                PicturesSource = new HashSet<Picture>() { picture1 },
+                Description = "Много добър, удобен и луксозен холов ъгъл.",
+                FurnitureTypes = new HashSet<FurnitureType>() { categories[0], categories[1] },
+                IsDeleted = false,
+                IsHidden = false,
+                Quantity = 10
+            });
+
+            context.Furnitures.Add(new Furniture()
+            {
+                Name = "Лукс",
+                Price = 11.00m,
+                PicturesSource = new HashSet<Picture>() { picture2 },
+                Description = "Много добър, удобен и луксозен холов ъгъл.",
+                FurnitureTypes = new HashSet<FurnitureType>() { categories[2], categories[3] },
+                IsDeleted = false,
+                IsHidden = false,
+                Quantity = 10
+            });
+
+            context.Furnitures.Add(new Furniture()
+            {
+                Name = "Олимп",
+                Price = 11.00m,
+                PicturesSource = new HashSet<Picture>() { picture3 },
+                Description = "Много добър, удобен и луксозен холов ъгъл.",
+                FurnitureTypes = new HashSet<FurnitureType>() { categories[3], categories[4] },
+                IsDeleted = false,
+                IsHidden = false,
+                Quantity = 10
+            });
+
+            context.Furnitures.Add(new Furniture()
+            {
+                Name = "Таня",
+                Price = 11.00m,
+                PicturesSource = new HashSet<Picture>() { picture4 },
+                Description = "Много добър, удобен и луксозен холов ъгъл.",
+                FurnitureTypes = new HashSet<FurnitureType>() { categories[0], categories[1] },
+                IsDeleted = false,
+                IsHidden = false,
+                Quantity = 10
+            });
+
+            context.Furnitures.Add(new Furniture()
+            {
+                Name = "Френско легло",
+                Price = 11.00m,
+                PicturesSource = new HashSet<Picture>() { picture5 },
+                Description = "Много добър, удобен и луксозен холов ъгъл.",
+                FurnitureTypes = new HashSet<FurnitureType>() { categories[2], categories[6] },
+                IsDeleted = false,
+                IsHidden = false,
+                Quantity = 10
+            });
+
+            context.Furnitures.Add(new Furniture()
+            {
+                Name = "Бродуей",
+                Price = 11.00m,
+                PicturesSource = new HashSet<Picture>() { picture6 },
+                Description = "Много добър, удобен и луксозен холов ъгъл.",
+                FurnitureTypes = new HashSet<FurnitureType>() { categories[0], categories[1] },
+                IsDeleted = false,
+                IsHidden = false,
+                Quantity = 10
+            });
+
+            //categories[0].Furnitures = new HashSet<Furniture>() 
+            //{
+            //    products[0],
+            //    products[3],
+            //    products[5]
+            //};
+            //context.FurnitureTypes.Add(categories[0]);
+
+            //categories[1].Furnitures = new HashSet<Furniture>() 
+            //{
+            //    products[0],
+            //    products[3],
+            //    products[5]
+            //};
+            //context.FurnitureTypes.Add(categories[1]);
+
+            //categories[2].Furnitures = new HashSet<Furniture>() 
+            //{
+            //    products[1],
+            //    products[4]
+            //};
+            //context.FurnitureTypes.Add(categories[2]);
+
+            //categories[3].Furnitures = new HashSet<Furniture>() 
+            //{
+            //    products[1],
+            //    products[2]
+            //};
+            //context.FurnitureTypes.Add(categories[3]);
+
+            //categories[4].Furnitures = new HashSet<Furniture>() 
+            //{
+            //    products[2]
+            //};
+            //context.FurnitureTypes.Add(categories[4]);
+
+            //categories[6].Furnitures = new HashSet<Furniture>() 
+            //{
+            //    products[4]
+            //};
+            //context.FurnitureTypes.Add(categories[6]);
+
+            context.SaveChanges();
         }
     }
 }

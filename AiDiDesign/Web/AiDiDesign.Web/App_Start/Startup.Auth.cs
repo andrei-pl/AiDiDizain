@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using AiDiDesign.Web.Models;
+using AiDiDesign.Web.ViewModels;
 using AiDiDesign.Data;
 using AiDiDesign.Data.Models;
 

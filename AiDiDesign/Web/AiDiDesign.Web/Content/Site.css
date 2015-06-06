@@ -8,6 +8,24 @@
     padding-right: 15px;
 }
 
+/*The idea is to use relative and absolute positioning to move search line to the bottom of page-header*/
+@media (min-width: 768px ) {
+    .row {
+        position: relative;
+    }
+
+    .bottom-aligned-text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+#basket {
+    padding: 0.7em 4em;
+    margin: 0.6em;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

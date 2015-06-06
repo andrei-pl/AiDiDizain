@@ -18,6 +18,11 @@
             return new AiDiDesignData(context);
         }
 
+        public AiDiDesignData()
+            : this(new AiDiDesignDbContext())
+        {
+        }
+
         public AiDiDesignData(IAiDiDesignDbContext context)
         {
             this.context = context;
@@ -76,6 +81,14 @@
             get
             {
                 return this.GetRepository<Picture>();
+            }
+        }
+        
+        public IDeletableEntityRepository<FirstPageText> FirstPageTexts
+        {
+            get
+            {
+                return this.GetRepository<FirstPageText>();
             }
         }
 

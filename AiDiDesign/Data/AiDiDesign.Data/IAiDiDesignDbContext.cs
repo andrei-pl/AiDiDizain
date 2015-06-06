@@ -19,6 +19,8 @@
 
         IDbSet<Picture> Pictures { get; set; }
 
+        IDbSet<FirstPageText> FirstPageTexts { get; set; }
+
         IDbSet<User> Users { get; set; }
 
         DbContext DbContext { get; }

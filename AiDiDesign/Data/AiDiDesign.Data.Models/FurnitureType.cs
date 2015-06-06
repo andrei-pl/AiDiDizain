@@ -19,6 +19,10 @@ using System.ComponentModel.DataAnnotations;
     //    Chairs,
     //    Children
     //}
+
+    // It must be this if we want to have dynamic menu.
+    // For static menu use the code above
+
     public class FurnitureType
     {
         ICollection<Furniture> furnitures;
