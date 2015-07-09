@@ -1,0 +1,93 @@
+﻿@model AiDiDesign.Web.ViewModels.ProductHomeViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>ProductHomeViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @foreach (var item in ViewData["Types"] as IEnumerable<AiDiDesign.Web.ViewModels.FurnitureTypeViewModel>)
+            {
+                string name = item.Name;
+                string nameModel = "productTypes";
+                
+                <div class="col-sm-1 nopadding">
+                    @Html.Label(name, name, htmlAttributes: new { @for = name })
+                    @Html.CheckBox(nameModel, htmlAttributes: new { @id = name, @value = name })
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Filename: ", htmlAttributes: new { @for = "file1" })
+            @Html.TextBox("files", "Upload", new { @type = "file", @id = "file1" })
+            @Html.Label("Filename: ", htmlAttributes: new { @for = "file2" })
+            @Html.TextBox("files", "Upload", new { @type = "file", @id = "file2" })
+            @Html.Label("Filename: ", htmlAttributes: new { @for = "file3" })
+            @Html.TextBox("files", "Upload", new { @type = "file", @id = "file3" })
+            @Html.Label("Filename: ", htmlAttributes: new { @for = "file4" })
+            @Html.TextBox("files", "Upload", new { @type = "file", @id = "file4" })
+            @Html.Label("Filename: ", htmlAttributes: new { @for = "file5" })
+            @Html.TextBox("files", "Upload", new { @type = "file", @id = "file5" })
+            @*<div class="col-md-10">
+                    @Html.(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                </div>*@
+            @*<label for="file1">Filename:</label>
+                <input type="file" name="files" id="file1" />
+
+                <label for="file2">Filename:</label>
+                <input type="file" name="files" id="file2" />*@
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    @*</form>*@
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

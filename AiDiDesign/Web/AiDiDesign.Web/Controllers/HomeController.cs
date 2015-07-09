@@ -56,7 +56,7 @@
         public ActionResult GetImage(Guid id)
         {
             string imageSrc = this.products.All().Project().To<ProductHomeViewModel>().FirstOrDefault(x => x.Id == id).PicturesSource.FirstOrDefault().PictureUrl;
-            var imageBitmap = new Bitmap(AiDiDesign.Common.Extensions.GetImageFromUrl(@"http://st.houzz.com/simgs/8af1647b0fd8d1e9_4-3533/contemporary-upholstery-fabric.jpg"));
+            var imageBitmap = new Bitmap(AiDiDesign.Common.Extensions.GetImageFromUrl(imageSrc));
             byte[] imageByte = AiDiDesign.Common.Extensions.ImageToByteArray(imageBitmap);
             return this.File(imageByte, "image/jpg");;
         }

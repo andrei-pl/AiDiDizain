@@ -7,8 +7,15 @@
 
     public class FurnitureTypeViewModel : IMapFrom<FurnitureType>
     {
+        public FurnitureTypeViewModel()
+        {
+            IsChecked = false;
+        }
+
         public Guid Id { get; set; }
 
         public string Name { get; set; }
+
+        public bool IsChecked { get; set; }
     }
 }
