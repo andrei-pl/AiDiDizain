@@ -29,7 +29,7 @@
         // GET: Gallery
         public ActionResult Index()
         {
-            var listOfProducts = this.products.All().Project().To<ProductHomeViewModel>();
+            var listOfProducts = this.products.All().Where(x => !x.IsDeleted).Project().To<ProductHomeViewModel>();
             return View(listOfProducts.ToList());
         }
 
@@ -51,7 +51,7 @@
         // GET: Gallery/Create
         public ActionResult Create()
         {
-           var types = this.data.FurnitureTypes.All().Project().To<FurnitureTypeViewModel>().ToArray();
+            var types = this.data.FurnitureTypes.All().Project().To<FurnitureTypeViewModel>().ToArray();
             //var typesDict = new Dictionary<FurnitureTypeViewModel, bool>();
 
             //foreach (var item in types)
@@ -137,21 +137,34 @@
             return RedirectToAction("Index");
         }
 
-        //    // POST: Gallery/Edit/5
-        //    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //    [HttpPost]
-        //    [ValidateAntiForgeryToken]
-        //    public ActionResult Edit([Bind(Include = "Id,Name,Description,Price,Quantity")] ProductHomeViewModel productHomeViewModel)
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            products.Entry(productHomeViewModel).State = EntityState.Modified;
-        //            products.SaveChanges();
-        //            return RedirectToAction("Index");
-        //        }
-        //        return View(productHomeViewModel);
-        //    }
+        public ActionResult Edit(Guid id)
+        {
+            var product = this.data.Furnitures.All().Project().To<ProductHomeViewModel>().Where(x => x.Id == id).FirstOrDefault();
+
+            return View(product);
+        }
+
+        // POST: Gallery/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,Price,Quantity")] ProductHomeViewModel productHomeViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var product = this.data.Furnitures.All().Where(x => x.Id == productHomeViewModel.Id).FirstOrDefault();
+                product.Name = productHomeViewModel.Name;
+                product.Description = productHomeViewModel.Description;
+                product.Price = productHomeViewModel.Price;
+                product.Quantity = productHomeViewModel.Quantity;
+
+                this.data.Furnitures.Update(product);
+                this.data.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(productHomeViewModel);
+        }
 
         // GET: Gallery/Delete/5
         public ActionResult Delete(Guid? id)
@@ -168,24 +181,24 @@
             return View(productHomeViewModel);
         }
 
-        //    // POST: Gallery/Delete/5
-        //    [HttpPost, ActionName("Delete")]
-        //    [ValidateAntiForgeryToken]
-        //    public ActionResult DeleteConfirmed(Guid id)
-        //    {
-        //        ProductHomeViewModel productHomeViewModel = products.GetById(id).Project().To<ProductHomeViewModel>();
-        //        products.All().Project().To<ProductHomeViewModel>().Remove(productHomeViewModel);
-        //        products.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+            // POST: Gallery/Delete/5
+            [HttpPost, ActionName("Delete")]
+            [ValidateAntiForgeryToken]
+            public ActionResult DeleteConfirmed(Guid id)
+            {
+                var product = products.All().Where(x => x.Id == id);
+                products.Delete(id);
+                products.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-        //    protected override void Dispose(bool disposing)
-        //    {
-        //        if (disposing)
-        //        {
-        //            products.Dispose();
-        //        }
-        //        base.Dispose(disposing);
-        //    }
+            protected override void Dispose(bool disposing)
+            {
+                if (disposing)
+                {
+                    products.Dispose();
+                }
+                base.Dispose(disposing);
+            }
     }
 }
